@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
 import DashboardLayout from "../components/DashboardLayout";
 import {
   Chart as ChartJS,
@@ -57,28 +56,28 @@ function AnalystDashboard() {
   }, []);
 
   return (
-  <DashboardLayout title="Data Analyst Dashboard" role="analyst">
-    
-    <div className="bg-white p-6 rounded shadow mb-6">
-      <h2 className="text-xl font-semibold text-gray-700">
-        Total Issues Reported
-      </h2>
-      <p className="text-3xl font-bold text-blue-700 mt-2">
-        {totalIssues}
-      </p>
-    </div>
-
-    {chartData && (
-      <div className="bg-white p-6 rounded shadow">
-        <h2 className="text-xl font-semibold mb-4">
-          Issues by Location
+    <DashboardLayout title="Data Analyst Dashboard" role="analyst">
+      
+      <div className="bg-white p-6 rounded shadow mb-6">
+        <h2 className="text-xl font-semibold text-gray-700">
+          Total Issues Reported
         </h2>
-        <Bar data={chartData} />
+        <p className="text-3xl font-bold text-blue-700 mt-2">
+          {totalIssues}
+        </p>
       </div>
-    )}
 
-  </DashboardLayout>
-);
+      {chartData && (
+        <div className="bg-white p-6 rounded shadow">
+          <h2 className="text-xl font-semibold mb-4">
+            Issues by Location
+          </h2>
+          <Bar data={chartData} />
+        </div>
+      )}
+
+    </DashboardLayout>
+  );
 }
 
 export default AnalystDashboard;
